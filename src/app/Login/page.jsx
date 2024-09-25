@@ -138,7 +138,7 @@ const Login = () => {
                   name="email"
                   variant="outlined"
                   sx={{
-                    width: "28rem",
+                    width: "60%",
                     marginY: "10px",
                     "& .MuiInputBase-root": {
                       color: "white",
@@ -174,7 +174,7 @@ const Login = () => {
                   name="password"
                   variant="outlined"
                   sx={{
-                    width: "28rem",
+                    width: "60%",
                     marginY: "10px",
                     "& .MuiInputBase-root": {
                       color: "white",
@@ -213,7 +213,7 @@ const Login = () => {
                     marginY: "20px",
                     backgroundColor: "#3e43fb",
                     color: "white",
-                    width: "28rem",
+                    width: "60%",
                     transition: "0.4s",
                     padding: "15px 20px",
                     borderRadius: "10px",
