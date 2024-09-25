@@ -13,7 +13,7 @@ const LayoutManager = ({ children }) => {
   const showHeader = isCheckoutLogin || isCheckoutSignUp;
 
   return (
-    <div>
+    <Box sx={{ overflow: "hidden" }}>
       {!showHeader && (
         <Box
           sx={{
@@ -26,7 +26,7 @@ const LayoutManager = ({ children }) => {
       <Box sx={{ marginLeft: !showHeader && { xs: "0", lg: "18rem" } }}>
         {children}
       </Box>
-    </div>
+    </Box>
   );
 };
 
