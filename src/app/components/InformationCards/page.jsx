@@ -1,12 +1,13 @@
 "use client";
-import { Box, Typography } from "@mui/material";
 import React from "react";
 import ArrowUpwardOutlinedIcon from "@mui/icons-material/ArrowUpwardOutlined";
 import ArrowDownwardOutlinedIcon from "@mui/icons-material/ArrowDownwardOutlined";
+import { Box, Typography } from "@mui/material";
 import { useTheme } from "../ThemeContext/page";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const InformationCards = ({
-  TitleIcon,
+  titleIcon,
   number,
   title,
   profit,
@@ -23,11 +24,12 @@ const InformationCards = ({
         boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.1) ",
       }}
     >
-      <TitleIcon
-        sx={{
+      <FontAwesomeIcon
+        icon={titleIcon}
+        style={{
           backgroundColor: isDarkMode ? "#313D4A" : "#EFF2F7",
           padding: "10px",
-          fontSize: "3rem",
+          fontSize: "1.5rem",
           color: isDarkMode ? "white" : "#3C50E0",
           borderRadius: "50%",
           marginBottom: "10px",
