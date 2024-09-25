@@ -72,60 +72,61 @@ export default function CustomizedAccordions({ accordions }) {
 
   return (
     <div>
-      {accordions.map((accordion, index) => (
-        <Accordion
-          key={index}
-          expanded={expanded === `panel${index}`}
-          onChange={handleChange(`panel${index}`)}
-        >
-          <AccordionSummary
-            aria-controls={`panel${index}-content`}
-            id={`panel${index}-header`}
-            customBgColor={
-              expanded === `panel${index}`
-                ? "#333A48"
-                : accordion.title === "Dashboard"
-                ? "#333A48"
-                : "transparent"
-            }
+      {Array.isArray(accordions) &&
+        accordions.map((accordion, index) => (
+          <Accordion
+            key={index}
+            expanded={expanded === `panel${index}`}
+            onChange={handleChange(`panel${index}`)}
           >
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              {accordion.icon && (
-                <span style={{ marginRight: "8px" }}>{accordion.icon}</span>
-              )}
-              <Typography>{accordion.title}</Typography>
-            </Box>
-          </AccordionSummary>
-          <AccordionDetails>
-            {accordion?.contents?.map((content, idx) => (
-              <Typography
-                key={idx}
-                sx={{
-                  paddingY: "5px",
-                  "&:hover": {
-                    cursor: "pointer",
-                    "& a": {
-                      color: "white !important",
-                    },
-                  },
-                }}
-              >
-                <Link
-                  href={content.url}
+            <AccordionSummary
+              aria-controls={`panel${index}-content`}
+              id={`panel${index}-header`}
+              customBgColor={
+                expanded === `panel${index}`
+                  ? "#333A48"
+                  : accordion.title === "Dashboard"
+                  ? "#333A48"
+                  : "transparent"
+              }
+            >
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                {accordion.icon && (
+                  <span style={{ marginRight: "8px" }}>{accordion.icon}</span>
+                )}
+                <Typography>{accordion.title}</Typography>
+              </Box>
+            </AccordionSummary>
+            <AccordionDetails>
+              {accordion?.contents?.map((content, idx) => (
+                <Typography
+                  key={idx}
                   sx={{
-                    color:
-                      pathname === content.url ? "white" : "rgb(138,153,175)",
-                    textDecoration: "none",
-                    transition: "color 0.3s ease",
+                    paddingY: "5px",
+                    "&:hover": {
+                      cursor: "pointer",
+                      "& a": {
+                        color: "white !important",
+                      },
+                    },
                   }}
                 >
-                  {content.text}
-                </Link>
-              </Typography>
-            ))}
-          </AccordionDetails>
-        </Accordion>
-      ))}
+                  <Link
+                    href={content.url}
+                    sx={{
+                      color:
+                        pathname === content.url ? "white" : "rgb(138,153,175)",
+                      textDecoration: "none",
+                      transition: "color 0.3s ease",
+                    }}
+                  >
+                    {content.text}
+                  </Link>
+                </Typography>
+              ))}
+            </AccordionDetails>
+          </Accordion>
+        ))}
     </div>
   );
 }
