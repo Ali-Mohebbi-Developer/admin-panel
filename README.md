@@ -6,7 +6,7 @@
 
 - Created - 2024-09-25
 
-- Technologies Used - Html , Css , responsive , MUI , JavaScript , CRUD , Api , React , Next js
+- Technologies Used - Html , Css , responsive , MUI , JavaScript , CRUD , Api , apex chart , React , Next js
 
 - Role - Frontend
 
