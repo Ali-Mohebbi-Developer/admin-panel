@@ -62,7 +62,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   color: "rgb(138,153,175)",
 }));
 
-export default function CustomizedAccordions({ accordions }) {
+export default function CustomizedAccordions({ accordions = [] }) {
   const [expanded, setExpanded] = React.useState(false);
   const pathname = usePathname();
 
