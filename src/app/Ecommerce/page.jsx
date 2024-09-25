@@ -6,14 +6,14 @@ import FirstCharts from "../components/FirstCharts/page";
 import SecondCharts from "../components/SecondCharts/page";
 import ThirdChart from "../components/ThirdChart/page";
 import InformationCards from "../components/InformationCards/page";
-import { useTheme } from "../components/ThemeContext/page";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { faUserGroup } from "@fortawesome/free-solid-svg-icons";
+import { useDark } from "../components/ThemeContext";
 
 const Ecommerce = () => {
-  const { isDarkMode } = useTheme();
+  const { isDarkMode } = useDark();
 
   return (
     <Box

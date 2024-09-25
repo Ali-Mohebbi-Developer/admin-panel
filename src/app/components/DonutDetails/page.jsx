@@ -1,10 +1,10 @@
 "use client";
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import { useTheme } from "../ThemeContext/page";
+import { useDark } from "../ThemeContext";
 
 const DonutDetails = ({ title, number, bgColor }) => {
-  const { isDarkMode } = useTheme();
+  const { isDarkMode } = useDark();
 
   return (
     <Box

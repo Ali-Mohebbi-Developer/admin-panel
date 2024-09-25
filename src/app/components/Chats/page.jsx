@@ -1,10 +1,10 @@
 "use client";
 import { Avatar, Badge, Box, Typography } from "@mui/material";
 import React from "react";
-import { useTheme } from "../ThemeContext/page";
+import { useDark } from "../ThemeContext";
 
 const Chats = ({ src, name, text, min, isMessage, status, numberMessages }) => {
-  const { isDarkMode } = useTheme();
+  const { isDarkMode } = useDark();
 
   return (
     <Box

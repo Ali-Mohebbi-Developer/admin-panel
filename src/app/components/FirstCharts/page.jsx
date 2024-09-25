@@ -5,10 +5,10 @@ import React from "react";
 import SplineChart from "../SplineChart/page";
 import BarChart from "../BarChart/page";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
-import { useTheme } from "../ThemeContext/page";
+import { useDark } from "../ThemeContext";
 
 const FirstCharts = () => {
-  const { isDarkMode } = useTheme();
+  const { isDarkMode } = useDark();
 
   return (
     <Box>

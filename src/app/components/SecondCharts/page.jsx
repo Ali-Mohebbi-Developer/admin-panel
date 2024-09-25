@@ -6,10 +6,10 @@ import Map from "../Map/page";
 import DonutChart from "../DonutChart/page";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import DonutDetails from "../DonutDetails/page";
-import { useTheme } from "../ThemeContext/page";
+import { useDark } from "../ThemeContext";
 
 const SecondCharts = () => {
-  const { isDarkMode } = useTheme();
+  const { isDarkMode } = useDark();
 
   return (
     <Box>

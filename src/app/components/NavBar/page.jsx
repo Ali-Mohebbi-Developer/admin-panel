@@ -21,7 +21,7 @@ import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
 import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import KeyboardBackspaceOutlinedIcon from "@mui/icons-material/KeyboardBackspaceOutlined";
 import LinkPage from "../LinkPage/page";
-import { useTheme } from "../ThemeContext/page";
+import { useDark } from "../ThemeContext";
 
 const theme = createTheme({
   components: {
@@ -145,7 +145,7 @@ const Navbar = ({ openNav, setOpenNav }) => {
   const handleToggle = () => {
     setOpenNav(!openNav);
   };
-  const { isDarkMode } = useTheme();
+  const { isDarkMode } = useDark();
   const handleClickOutside = (event) => {
     if (navbarRef.current && !navbarRef.current.contains(event.target)) {
       setOpenNav(false);

@@ -3,7 +3,7 @@ import React from "react";
 import ArrowUpwardOutlinedIcon from "@mui/icons-material/ArrowUpwardOutlined";
 import ArrowDownwardOutlinedIcon from "@mui/icons-material/ArrowDownwardOutlined";
 import { Box, Typography } from "@mui/material";
-import { useTheme } from "../ThemeContext/page";
+import { useDark } from "../ThemeContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const InformationCards = ({
@@ -14,7 +14,7 @@ const InformationCards = ({
   isOption,
   isGrow,
 }) => {
-  const { isDarkMode } = useTheme();
+  const { isDarkMode } = useDark();
 
   return (
     <Box

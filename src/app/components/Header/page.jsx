@@ -10,12 +10,12 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { useTheme } from "../ThemeContext/page";
+import { useDark } from "../ThemeContext";
 import Navbar from "../NavBar/page";
 import Swal from "sweetalert2";
 
 const Header = () => {
-  const { isDarkMode, toggleDarkMode } = useTheme();
+  const { isDarkMode, toggleDarkMode } = useDark();
   const [isText, setIsText] = useState("");
   const [notif, setNotif] = useState(false);
   const [openNotif, setOpenNotif] = useState(false);

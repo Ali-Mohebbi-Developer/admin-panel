@@ -3,11 +3,11 @@ import React from "react";
 import Grid from "@mui/material/Grid2";
 import { Box, Typography } from "@mui/material";
 import Channels from "../Channels/page";
-import { useTheme } from "../ThemeContext/page";
+import { useDark } from "../ThemeContext";
 import Chats from "../Chats/page";
 
 const ThirdChart = () => {
-  const { isDarkMode } = useTheme();
+  const { isDarkMode } = useDark();
 
   return (
     <Box sx={{ marginTop: "30px" }}>

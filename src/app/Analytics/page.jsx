@@ -1,6 +1,6 @@
 "use client";
 import { Box, Typography } from "@mui/material";
-import { useTheme } from "../components/ThemeContext/page";
+import { useDark } from "../components/ThemeContext";
 import ColumnChart from "../components/ColumnChart/page";
 import Grid from "@mui/material/Grid2";
 import Rates from "../components/Rates/page";
@@ -10,7 +10,7 @@ import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDown
 import Products from "../components/Products/page";
 
 const Analytics = () => {
-  const { isDarkMode } = useTheme();
+  const { isDarkMode } = useDark();
 
   return (
     <Box

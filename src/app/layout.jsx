@@ -1,5 +1,5 @@
 import "./globals.css";
-import { ThemeProvider } from "./components/ThemeContext/page";
+import { ThemeProvider } from "./components/ThemeContext";
 import LayoutManager from "./layoutManager";
 
 export const metadata = {

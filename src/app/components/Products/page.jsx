@@ -1,10 +1,10 @@
 "use client";
 import { Avatar, Box, Typography } from "@mui/material";
 import React from "react";
-import { useTheme } from "../ThemeContext/page";
+import { useDark } from "../ThemeContext";
 
 const Products = ({ logo, title, category, price, sold, profit }) => {
-  const { isDarkMode } = useTheme();
+  const { isDarkMode } = useDark();
   return (
     <Box
       sx={{

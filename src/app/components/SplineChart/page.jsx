@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import { useTheme } from "../ThemeContext/page";
+import { useDark } from "../ThemeContext";
 
 const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
@@ -9,7 +9,7 @@ const ReactApexChart = dynamic(() => import("react-apexcharts"), {
 
 const SplineChart = () => {
   const [isClient, setIsClient] = useState(false);
-  const { isDarkMode } = useTheme();
+  const { isDarkMode } = useDark();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
