@@ -1,11 +1,21 @@
 "use client";
-import { Box, Button, Grid2, Link, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid2,
+  Icon,
+  Link,
+  TextField,
+  Typography,
+} from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import GoogleIcon from "@mui/icons-material/Google";
 import { useFormik } from "formik";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 const validationSchema = Yup.object({
   email: Yup.string()
@@ -65,6 +75,7 @@ const Login = () => {
         .catch((error) => {});
     },
   });
+  const [showPass, setShowPass] = useState(false);
 
   return (
     <Box
@@ -138,7 +149,7 @@ const Login = () => {
                   name="email"
                   variant="outlined"
                   sx={{
-                    width: {xs:"60%" , lg:"28rem"},
+                    width: { xs: "100%", md: "28rem" },
                     marginY: "10px",
                     "& .MuiInputBase-root": {
                       color: "white",
@@ -168,44 +179,62 @@ const Login = () => {
                   helperText={formik.touched.email && formik.errors.email}
                 />
 
-                <TextField
-                  fullWidth
-                  label="Password"
-                  name="password"
-                  variant="outlined"
-                  sx={{
-                    width: {xs:"60%" , lg:"28rem"},
-                    marginY: "10px",
-                    "& .MuiInputBase-root": {
-                      color: "white",
-                    },
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": {
-                        borderColor: "white",
+                <Box sx={{ position: "relative" }}>
+                  <TextField
+                    fullWidth
+                    type={showPass ? "text" : "password"}
+                    label="Password"
+                    name="password"
+                    variant="outlined"
+                    sx={{
+                      width: { xs: "100%", md: "28rem" },
+                      marginY: "10px",
+                      "& .MuiInputBase-root": {
+                        color: "white",
                       },
-                      "&:hover fieldset": {
-                        borderColor: "lightgray",
+                      "& .MuiOutlinedInput-root": {
+                        "& fieldset": {
+                          borderColor: "white",
+                        },
+                        "&:hover fieldset": {
+                          borderColor: "lightgray",
+                        },
+                        "&.Mui-focused fieldset": {
+                          borderColor: "white",
+                        },
                       },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "white",
+                      "& .MuiInputLabel-root": {
+                        color: "white",
                       },
-                    },
-                    "& .MuiInputLabel-root": {
-                      color: "white",
-                    },
-                    "& .MuiInputLabel-root.Mui-focused": {
-                      color: "white",
-                    },
-                  }}
-                  type="password"
-                  value={formik.values.password}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  error={
-                    formik.touched.password && Boolean(formik.errors.password)
-                  }
-                  helperText={formik.touched.password && formik.errors.password}
-                />
+                      "& .MuiInputLabel-root.Mui-focused": {
+                        color: "white",
+                      },
+                    }}
+                    value={formik.values.password}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    error={
+                      formik.touched.password && Boolean(formik.errors.password)
+                    }
+                    helperText={
+                      formik.touched.password && formik.errors.password
+                    }
+                  />
+                  <Box
+                    onClick={() => setShowPass(!showPass)}
+                    sx={{
+                      position: "absolute",
+                      top: "50%",
+                      right: "10px",
+                      transform: "translateY(-50%)",
+                      color: "black",
+                      cursor: "pointer",
+                      color: showPass ? "#3240FF" : "white",
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faEyeSlash} />
+                  </Box>
+                </Box>
 
                 <Button
                   type="submit"
@@ -213,14 +242,14 @@ const Login = () => {
                     marginY: "20px",
                     backgroundColor: "#3e43fb",
                     color: "white",
-                    width: {xs:"60%" , lg:"28rem"},
+                    width: { xs: "100%", md: "28rem" },
                     transition: "0.4s",
                     padding: "15px 20px",
                     borderRadius: "10px",
                     ":hover": { backgroundColor: "#3134B5" },
                   }}
                 >
-                  Sign Up
+                  Login
                 </Button>
               </form>
 
