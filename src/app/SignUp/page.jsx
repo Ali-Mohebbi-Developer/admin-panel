@@ -110,7 +110,12 @@ const SignUp = () => {
                 height: "100%",
                 justifyContent: "center",
                 alignItems: "flex-start",
-                transform: "translateX(20%)",
+                transform: {
+                  xs: "translateX(0)",
+                  md: "translateX(10%)",
+                  lg: "translateX(10%)",
+                },
+                padding: { xs: "40px", sm: "150px", md: "0" },
               }}
             >
               <Typography
@@ -151,7 +156,7 @@ const SignUp = () => {
                   name="name"
                   variant="outlined"
                   sx={{
-                    width: "100%",
+                    width: { xs: "16rem", sm: "24rem", md: "28rem" },
                     marginY: "10px",
                     "& .MuiInputBase-root": {
                       color: "white",
@@ -187,7 +192,7 @@ const SignUp = () => {
                   name="email"
                   variant="outlined"
                   sx={{
-                    width: "100%",
+                    width: { xs: "16rem", sm: "24rem", md: "28rem" },
                     marginY: "10px",
                     "& .MuiInputBase-root": {
                       color: "white",
@@ -217,7 +222,7 @@ const SignUp = () => {
                   helperText={formik.touched.email && formik.errors.email}
                 />
 
-                <Box sx={{ position: "relative" }}>
+                <Box sx={{ display: "flex", alignItems: "flex-start" }}>
                   <TextField
                     fullWidth
                     label="Password"
@@ -225,7 +230,7 @@ const SignUp = () => {
                     variant="outlined"
                     type={showPass ? "text" : "password"}
                     sx={{
-                      width: "100%",
+                      width: { xs: "16rem", sm: "24rem", md: "28rem" },
                       marginY: "10px",
                       "& .MuiInputBase-root": {
                         color: "white",
@@ -261,10 +266,7 @@ const SignUp = () => {
                   <Box
                     onClick={() => setShowPass(!showPass)}
                     sx={{
-                      position: "absolute",
-                      top: "50%",
-                      right: "10px",
-                      transform: "translateY(-50%)",
+                      transform: "translate(-150% , 100%)",
                       color: "black",
                       cursor: "pointer",
                       color: showPass ? "#3240FF" : "white",
@@ -274,7 +276,7 @@ const SignUp = () => {
                   </Box>
                 </Box>
 
-                <Box sx={{ position: "relative" }}>
+                <Box sx={{ display: "flex", alignItems: "flex-start" }}>
                   <TextField
                     fullWidth
                     label="Confirm Password"
@@ -282,7 +284,7 @@ const SignUp = () => {
                     variant="outlined"
                     type={showConfirmPass ? "text" : "password"}
                     sx={{
-                      width: "100%",
+                      width: { xs: "16rem", sm: "24rem", md: "28rem" },
                       marginY: "10px",
                       "& .MuiInputBase-root": {
                         color: "white",
@@ -320,10 +322,7 @@ const SignUp = () => {
                   <Box
                     onClick={() => setShowConfirmPass(!showConfirmPass)}
                     sx={{
-                      position: "absolute",
-                      top: "50%",
-                      right: "10px",
-                      transform: "translateY(-50%)",
+                      transform: "translate(-150% , 100%)",
                       color: "black",
                       cursor: "pointer",
                       color: showConfirmPass ? "#3240FF" : "white",
@@ -339,7 +338,7 @@ const SignUp = () => {
                     marginY: "20px",
                     backgroundColor: "#3e43fb",
                     color: "white",
-                    width: "100%",
+                    width: { xs: "16rem", sm: "24rem", md: "28rem" },
                     transition: "0.4s",
                     padding: "15px 20px",
                     borderRadius: "10px",
