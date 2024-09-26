@@ -108,7 +108,12 @@ const Login = () => {
                 height: "100%",
                 justifyContent: "center",
                 alignItems: "flex-start",
-                transform: "translateX(20%)",
+                transform: {
+                  xs: "translateX(0)",
+                  md: "translateX(10%)",
+                  lg: "translateX(10%)",
+                },
+                padding: { xs: "40px", sm: "150px", md: "0" },
               }}
             >
               <Typography
@@ -149,7 +154,7 @@ const Login = () => {
                   name="email"
                   variant="outlined"
                   sx={{
-                    width: { xs: "100%", md: "28rem" },
+                    width: { xs: "16rem", sm: "24rem", md: "28rem" },
                     marginY: "10px",
                     "& .MuiInputBase-root": {
                       color: "white",
@@ -179,7 +184,12 @@ const Login = () => {
                   helperText={formik.touched.email && formik.errors.email}
                 />
 
-                <Box sx={{ position: "relative" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                  }}
+                >
                   <TextField
                     fullWidth
                     type={showPass ? "text" : "password"}
@@ -187,7 +197,7 @@ const Login = () => {
                     name="password"
                     variant="outlined"
                     sx={{
-                      width: { xs: "100%", md: "28rem" },
+                      width: { xs: "16rem", sm: "24rem", md: "28rem" },
                       marginY: "10px",
                       "& .MuiInputBase-root": {
                         color: "white",
@@ -223,10 +233,7 @@ const Login = () => {
                   <Box
                     onClick={() => setShowPass(!showPass)}
                     sx={{
-                      position: "absolute",
-                      top: "50%",
-                      right: "10px",
-                      transform: "translateY(-50%)",
+                      transform: "translate(-150% , 100%)",
                       color: "black",
                       cursor: "pointer",
                       color: showPass ? "#3240FF" : "white",
@@ -242,7 +249,7 @@ const Login = () => {
                     marginY: "20px",
                     backgroundColor: "#3e43fb",
                     color: "white",
-                    width: { xs: "100%", md: "28rem" },
+                    width: { xs: "16rem", sm: "24rem", md: "28rem" },
                     transition: "0.4s",
                     padding: "15px 20px",
                     borderRadius: "10px",
